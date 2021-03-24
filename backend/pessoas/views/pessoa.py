@@ -32,9 +32,7 @@ class PessoaCreate(generics.CreateAPIView):
     """Criando pessoa"""
     queryset = Pessoa.objects.all()
     serializer_class = PessoaSerializer
-    permission_classes = (
-        permissions.DjangoModelPermissions,
-    )
+
 
 
 class PessoaGet(generics.RetrieveAPIView):

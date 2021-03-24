@@ -8,15 +8,15 @@
         type="text"
         id="login"
         class="fadeIn second"
-        name="login"
+        name="email"
         placeholder="usuário"
-        v-model="user.username"
+        v-model="user.email"
       />
       <input
         type="password"
         id="password"
         class="fadeIn third"
-        name="login"
+        name="password"
         placeholder="senha"
         v-model="user.password"
       />
@@ -25,6 +25,7 @@
         class="fadeIn fourth"
         style="font-weight: bold"
         value="Entrar"
+        
         @click.prevent="submit"
       />
     </form>
@@ -56,7 +57,7 @@ export default {
     async submit() {
       try {
         await this.login(this.user);
-        // this.$router.push( { path: '/' })
+        window.location.reload( this.$router.push( { path: '/' }));   
       } catch (error) {
         alert('erro no login')
         console.log("Erro de Login: ", error);

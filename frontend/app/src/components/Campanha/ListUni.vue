@@ -28,6 +28,7 @@
 
 <script>
 import axios from "axios";
+
 export default {
   name: "CampanhaListUni",
   data() {
@@ -41,10 +42,16 @@ export default {
   },
   methods: {
     getCampanhaId() {
-      axios.get(`api/campanhas`).then((res) => {
-        console.log(this.$route.query.test)        
-        this.campanhas = res.data;
-      });
+      axios
+        .request({
+          baseURL: "http://localhost:8000",
+          method: "get",
+          url: `/api/campanhas/get/${this.$route.params.id}/`
+        })
+        .then(res => {
+          this.campanhas = res.data
+          console.log(res)
+        });
     },
   },
 };

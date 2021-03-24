@@ -16,7 +16,7 @@
             <td>{{ campanha.titulo_campanha }}</td>
             <td>{{ campanha.dt_inicio_campanha }}</td>
             <td>{{ campanha.dt_fim_campanha }}</td>
-            <td><a href="/campanhaListUni">Acessar</a></td>
+            <td><a href="'/campanhaListUni/'${campanha_id}">Acessar</a></td>
           </tr>
         </tbody>
       </table>
